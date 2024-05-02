@@ -1,0 +1,16 @@
+from PyPDF2 import PdfMerger
+
+def merge_pdfs(paths, output):
+    merger = PdfMerger()
+    for path in paths:
+        merger.append(path)
+    merger.write(output)
+    merger.close()
+
+# Usage example
+pdf_paths = [
+    r"pdf 경로", 
+    r"pdf 경로"
+]
+output_path = r"병합될 pdf 생성 경로"
+merge_pdfs(pdf_paths, output_path)
